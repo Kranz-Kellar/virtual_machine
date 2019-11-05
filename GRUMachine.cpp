@@ -18,7 +18,7 @@ void GRUMachine::Init()
 	instructions[SET] = &GRUMachine::SET_Impl;
 	instructions[HLT] = &GRUMachine::HLT_Impl;
 
-	//Prgram for test
+	//Prîgram for test
 	memory[0] = PSH;
 	memory[1] = 1;
 	memory[2] = PSH;
