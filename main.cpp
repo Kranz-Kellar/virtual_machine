@@ -3,6 +3,9 @@
 #include "Registers.h"
 #include "Instructions.h"
 
+#include "IVirtualMachine.h"
+#include "GRUMachine.h"
+
 int stack[256];
 int registers[NUM_OF_REGISTERS];
 
@@ -25,7 +28,10 @@ bool running = true;
 
 int main() {
 
-	stackPointer = -1;
+	IVirtualMachine* machine = new GRUMachine();
+	machine->Init();
+	machine->RunMachine();
+	/*stackPointer = -1;
 
 	while (running) {
 		executeInstruction(fetchNextInstruction());
@@ -36,7 +42,9 @@ int main() {
 		instructionPointer++;
 
 		printf("%d", instructionPointer);
-	}
+	}*/
+
+
 
 	return 0;
 }
